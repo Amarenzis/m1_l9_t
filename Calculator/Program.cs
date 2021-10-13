@@ -57,15 +57,15 @@ namespace Calculator
             }
             catch (FormatException)
             {
-                Console.WriteLine("К сожалению, это не похоже на число или код действия.");                
+                Console.WriteLine("К сожалению, это не похоже на число или код действия. Не верен формат входных данных");                
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("Коды действия ограничены числами от 1 до 4.");
             }
-            catch (DivideByZeroException)
+            catch (DivideByZeroException ex)
             {
-                Console.WriteLine("Деление на ноль!");
+                Console.WriteLine(ex.Message);
             }           
             
             #endregion
